@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+  One More Beat Movement — design tokens
+  Black & white only. No gradients. No color.
+*/
+
+:root {
+  --omb-black: #0a0a0a;
+  --omb-ink: #111111;
+  --omb-white: #ffffff;
+  --omb-paper: #f7f6f4;
+  --omb-line: #e4e2dd;
+  --omb-line-dark: #2a2a2a;
+  --omb-muted: #6b6b6b;
+  --omb-muted-dark: #9a9a9a;
+}
+
+@theme inline {
+  --color-omb-black: var(--omb-black);
+  --color-omb-ink: var(--omb-ink);
+  --color-omb-white: var(--omb-white);
+  --color-omb-paper: var(--omb-paper);
+  --color-omb-line: var(--omb-line);
+  --color-omb-line-dark: var(--omb-line-dark);
+  --color-omb-muted: var(--omb-muted);
+  --color-omb-muted-dark: var(--omb-muted-dark);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-signature: var(--font-signature);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--omb-white);
+  color: var(--omb-ink);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+@keyframes ombBeat {
+  0%, 100% { transform: scaleY(0.28); opacity: 0.35; }
+  8%       { transform: scaleY(1);    opacity: 1; }
+  16%      { transform: scaleY(0.5);  opacity: 0.6; }
+  24%      { transform: scaleY(0.92); opacity: 0.9; }
+  40%      { transform: scaleY(0.28); opacity: 0.35; }
+}
+
+.beat-line {
+  transform-origin: center;
+  animation: ombBeat 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ombFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: ombFadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: var(--omb-ink);
+  color: var(--omb-white);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .beat-line,
+  .fade-up,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
