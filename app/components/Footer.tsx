@@ -1,6 +1,6 @@
 // ⚠️ PLACEHOLDER — replace with your real Facebook Group URL once created.
 //    This same line also appears in app/components/Community.tsx — update both.
-const FACEBOOK_GROUP_URL = "https://www.facebook.com/groups/onemorebeatmovement";
+const FACEBOOK_GROUP_URL = "https://www.facebook.com/share/g/1EqiaW4rXD";
 const TIKTOK_URL = "https://www.tiktok.com/@onemorebeatmovement";
 const INSTAGRAM_URL = "https://www.instagram.com/onemorebeatmovement";
 

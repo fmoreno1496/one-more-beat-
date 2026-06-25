@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 // Facebook Group URL — replace FACEBOOK_GROUP_URL with the real link.
 // ⚠️ PLACEHOLDER — replace with your real Facebook Group URL once created.
 //    This same line also appears in app/components/Footer.tsx — update both.
-const FACEBOOK_GROUP_URL = "https://www.facebook.com/groups/onemorebeatmovement";
+const FACEBOOK_GROUP_URL = "https://www.facebook.com/share/g/1EqiaW4rXD/";
 
 export default function Community() {
   return (
